@@ -1,3 +1,4 @@
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 module Data.HMAC.OTP.HOTP
   ( hotp
   , count
@@ -22,7 +23,7 @@ import Data.Maybe (listToMaybe)
 import Numeric (readHex,showHex)
 import qualified Codec.Binary.Base32 as Base32
 
-newtype Count = Count Word64 deriving (Show)
+newtype Count = Count Word64 deriving (Show,Eq,Enum,Num)
 
 hotp :: [Octet] -> Count -> Int -> Int
 hotp k (Count c) d = fromTwosComp sbits `mod` (10^d)
