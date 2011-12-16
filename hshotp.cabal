@@ -48,7 +48,7 @@ Library
   Exposed-modules:    Data.HMAC.OTP.HOTP 
   
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4, Crypto, split, time, hex, bytestring, dataenc
+  Build-depends:       base >= 4, bytestring, Crypto, dataenc, split, time
   
   -- Modules not exported by this package.
   -- Other-modules:       
