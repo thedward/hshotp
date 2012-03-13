@@ -55,7 +55,7 @@ decodeHexKey = mapM (fmap fst . listToMaybe . readHex) . chunk 2
 hexOctet :: Octet -> String
 hexOctet o = case showHex o "" of
                   [x] -> ['0',x]
-decodeHexKey = sequence . map (fmap fst . listToMaybe . readHex) . chunk 2
+                  xs  -> xs
 
 encodeHexKey :: [Octet] -> String
 encodeHexKey = concatMap hexOctet
